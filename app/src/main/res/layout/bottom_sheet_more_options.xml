@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutMoreOptionsSheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/android:windowBackground"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/_12sdp"
+    android:paddingBottom="@dimen/_20sdp">
+
+    <!-- Handle indicator -->
+    <View
+        android:layout_width="@dimen/_36sdp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:background="@drawable/popup_menu_background"
+        android:backgroundTint="?attr/android:textColorHint" />
+
+    <!-- Header: Last Edited Date & Time -->
+    <TextView
+        android:id="@+id/sheetTextEditedDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:fontFamily="@font/ubuntu"
+        android:text="Edited Today"
+        android:textColor="?attr/android:textColorHint"
+        android:textSize="@dimen/_11ssp" />
+
+    <!-- Make a copy (Duplicate note) -->
+    <LinearLayout
+        android:id="@+id/optionMakeCopy"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_18sdp"
+        android:paddingEnd="@dimen/_18sdp">
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_copy"
+            app:tint="?attr/android:textColor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:fontFamily="@font/ubuntu"
+            android:text="Make a copy"
+            android:textColor="?attr/android:textColor"
+            android:textSize="@dimen/_13ssp" />
+    </LinearLayout>
+
+    <!-- Copy note text to clipboard -->
+    <LinearLayout
+        android:id="@+id/optionCopyText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_18sdp"
+        android:paddingEnd="@dimen/_18sdp">
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/baseline_edit_note_24"
+            app:tint="?attr/android:textColor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:fontFamily="@font/ubuntu"
+            android:text="Copy note text"
+            android:textColor="?attr/android:textColor"
+            android:textSize="@dimen/_13ssp" />
+    </LinearLayout>
+
+    <!-- Share / Send -->
+    <LinearLayout
+        android:id="@+id/optionShare"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_18sdp"
+        android:paddingEnd="@dimen/_18sdp">
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/baseline_share_24"
+            app:tint="?attr/android:textColor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:fontFamily="@font/ubuntu"
+            android:text="Send"
+            android:textColor="?attr/android:textColor"
+            android:textSize="@dimen/_13ssp" />
+    </LinearLayout>
+
+    <!-- Delete / Move to Bin -->
+    <LinearLayout
+        android:id="@+id/optionDelete"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_18sdp"
+        android:paddingEnd="@dimen/_18sdp">
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/baseline_delete_24"
+            app:tint="#FF4842" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:fontFamily="@font/ubuntu"
+            android:text="Delete"
+            android:textColor="#FF4842"
+            android:textSize="@dimen/_13ssp" />
+    </LinearLayout>
+
+</LinearLayout>

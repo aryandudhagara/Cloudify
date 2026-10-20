@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/NotesContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/android:windowBackground"
+    tools:context=".Activity.CreatingNoteActivity">
+
+    <!-- Top Action Bar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imageBack"
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:padding="@dimen/_4sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:tint="?attr/android:textColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <!-- Pin Note Button -->
+            <ImageView
+                android:id="@+id/imagePin"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:padding="@dimen/_5sdp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Pin Note"
+                android:src="@drawable/ic_pin"
+                app:tint="?attr/android:textColor" />
+
+            <!-- Share Note Button -->
+            <ImageView
+                android:id="@+id/imageShare"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:padding="@dimen/_5sdp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Share Note"
+                android:src="@drawable/baseline_share_24"
+                app:tint="?attr/android:textColor" />
+
+            <!-- Save / Done Button -->
+            <ImageView
+                android:id="@+id/save"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:padding="@dimen/_5sdp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Save Note"
+                android:src="@drawable/baseline_save_24"
+                app:tint="?attr/colorAccent" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Scrollable Note Content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/noteScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingStart="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_16sdp"
+        android:paddingBottom="@dimen/_24sdp"
+        app:layout_constraintTop_toBottomOf="@id/topBarLayout"
+        app:layout_constraintBottom_toTopOf="@id/bottomToolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Note Title -->
+            <EditText
+                android:id="@+id/inputNoteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@null"
+                android:fontFamily="@font/ubuntu_bold"
+                android:hint="Title"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLines="3"
+                android:paddingTop="@dimen/_4sdp"
+                android:paddingBottom="@dimen/_4sdp"
+                android:textColor="?attr/android:textColor"
+                android:textColorHint="?attr/android:textColorHint"
+                android:textSize="@dimen/_18ssp" />
+
+            <!-- Note Date & Time -->
+            <TextView
+                android:id="@+id/textDateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="@font/ubuntu"
+                android:includeFontPadding="false"
+                android:textColor="?attr/android:textColorHint"
+                android:textSize="@dimen/_10ssp" />
+
+            <!-- Subtitle Container -->
+            <LinearLayout
+                android:id="@+id/subtitleContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/viewSubtitleIndicator"
+                    android:layout_width="@dimen/_4sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:background="@drawable/background_subtitle_indicator" />
+
+                <EditText
+                    android:id="@+id/inputNoteSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:background="@null"
+                    android:fontFamily="@font/ubuntu_medium"
+                    android:hint="Subtitle"
+                    android:importantForAutofill="no"
+                    android:includeFontPadding="false"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:maxLines="2"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_2sdp"
+                    android:textColor="?attr/android:textColor"
+                    android:textColorHint="?attr/android:textColorHint"
+                    android:textSize="@dimen/_13ssp" />
+
+            </LinearLayout>
+
+            <!-- Image Container -->
+            <FrameLayout
+                android:id="@+id/imageContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/imagenote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/imageRemoveImage"
+                    android:layout_width="@dimen/_26sdp"
+                    android:layout_height="@dimen/_26sdp"
+                    android:layout_gravity="top|end"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:background="@drawable/background_delete"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/baseline_delete_24"
+                    android:visibility="gone"
+                    app:tint="@color/white" />
+
+            </FrameLayout>
+
+            <!-- Note Body -->
+            <EditText
+                android:id="@+id/inputNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:autoLink="web"
+                android:background="@null"
+                android:fontFamily="@font/ubuntu"
+                android:gravity="top"
+                android:hint="Note"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="textCapSentences|textMultiLine"
+                android:lineSpacingMultiplier="1.25"
+                android:minHeight="@dimen/_180sdp"
+                android:paddingTop="@dimen/_6sdp"
+                android:paddingBottom="@dimen/_40sdp"
+                android:textColor="?attr/android:textColor"
+                android:textColorHint="?attr/android:textColorHint"
+                android:textSize="@dimen/_14ssp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Toolbar (Google Keep Style) -->
+    <LinearLayout
+        android:id="@+id/bottomToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_44sdp"
+        android:background="?attr/android:windowBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_12sdp"
+        android:paddingEnd="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Attachment Button [+] -->
+        <ImageView
+            android:id="@+id/btnAttachment"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:padding="@dimen/_5sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Add attachment"
+            android:src="@drawable/ic_add_box"
+            app:tint="?attr/android:textColor" />
+
+        <!-- Color Palette Button [Palette] -->
+        <ImageView
+            android:id="@+id/btnColorPicker"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:padding="@dimen/_5sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Change Color"
+            android:src="@drawable/ic_palette"
+            app:tint="?attr/android:textColor" />
+
+        <!-- Status / Word Count Text (Center) -->
+        <TextView
+            android:id="@+id/textFooterStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:fontFamily="@font/ubuntu"
+            android:text="0 words"
+            android:textColor="?attr/android:textColorHint"
+            android:textSize="@dimen/_10ssp" />
+
+        <!-- More Options Button [⋮] -->
+        <ImageView
+            android:id="@+id/btnMoreOptions"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:padding="@dimen/_5sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="More options"
+            android:src="@drawable/ic_more_vert"
+            app:tint="?attr/android:textColor" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

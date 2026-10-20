@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutColorSheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/android:windowBackground"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/_12sdp"
+    android:paddingBottom="@dimen/_24sdp">
+
+    <!-- Handle indicator -->
+    <View
+        android:layout_width="@dimen/_36sdp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:background="@drawable/popup_menu_background"
+        android:backgroundTint="?attr/android:textColorHint" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="Color"
+        android:textColor="?attr/android:textColor"
+        android:textSize="@dimen/_13ssp" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingStart="@dimen/_14sdp"
+        android:paddingEnd="@dimen/_14sdp">
+
+        <LinearLayout
+            android:id="@+id/colorPaletteRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Color 1: Default / Dark Grey -->
+            <FrameLayout
+                android:id="@+id/btnColor1"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_10sdp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_note_color_1" />
+                <ImageView
+                    android:id="@+id/tickColor1"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_done"
+                    app:tint="@color/white" />
+            </FrameLayout>
+
+            <!-- Color 2: Red -->
+            <FrameLayout
+                android:id="@+id/btnColor2"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_10sdp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_note_color_2" />
+                <ImageView
+                    android:id="@+id/tickColor2"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_done"
+                    android:visibility="gone"
+                    app:tint="@color/white" />
+            </FrameLayout>
+
+            <!-- Color 3: Yellow/Orange -->
+            <FrameLayout
+                android:id="@+id/btnColor3"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_10sdp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_note_color_3" />
+                <ImageView
+                    android:id="@+id/tickColor3"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_done"
+                    android:visibility="gone"
+                    app:tint="@color/black" />
+            </FrameLayout>
+
+            <!-- Color 4: Blue -->
+            <FrameLayout
+                android:id="@+id/btnColor4"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_10sdp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_note_color_4" />
+                <ImageView
+                    android:id="@+id/tickColor4"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_done"
+                    android:visibility="gone"
+                    app:tint="@color/white" />
+            </FrameLayout>
+
+            <!-- Color 5: Dark Blue -->
+            <FrameLayout
+                android:id="@+id/btnColor5"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_10sdp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_note_color_5" />
+                <ImageView
+                    android:id="@+id/tickColor5"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_done"
+                    android:visibility="gone"
+                    app:tint="@color/white" />
+            </FrameLayout>
+
+            <!-- Color 6: Pink -->
+            <FrameLayout
+                android:id="@+id/btnColor6"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_10sdp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_note_color_6" />
+                <ImageView
+                    android:id="@+id/tickColor6"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_done"
+                    android:visibility="gone"
+                    app:tint="@color/white" />
+            </FrameLayout>
+
+            <!-- Color 7: Lavender -->
+            <FrameLayout
+                android:id="@+id/btnColor7"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_10sdp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_note_color_7" />
+                <ImageView
+                    android:id="@+id/tickColor7"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_done"
+                    android:visibility="gone"
+                    app:tint="@color/black" />
+            </FrameLayout>
+
+            <!-- Color 8: Purple -->
+            <FrameLayout
+                android:id="@+id/btnColor8"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_note_color_8" />
+                <ImageView
+                    android:id="@+id/tickColor8"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_done"
+                    android:visibility="gone"
+                    app:tint="@color/white" />
+            </FrameLayout>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</LinearLayout>
