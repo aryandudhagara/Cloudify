@@ -13,6 +13,7 @@ Thumbs.db
 # Module / build outputs
 /build/
 /app/build/
+/app-debug.apk
 captures/
 .externalNativeBuild/
 .cxx/
